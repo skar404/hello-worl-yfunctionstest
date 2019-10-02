@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-zip -r app.zip * --exclude "*.log" --exclude "*venv*" --exclude "deploy.sh"
+zip -r app.zip * --exclude "*.log" --exclude "*venv*" --exclude "deploy.sh" --exclude "*__pycache__*"
 
 yc serverless function version create \
   --function-name=hello-world \

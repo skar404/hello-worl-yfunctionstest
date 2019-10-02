@@ -1,4 +1,5 @@
 import math
+import os
 import time
 import shutil
 import requests
@@ -19,11 +20,11 @@ def convert_size(size_bytes):
 
 def handler(event, context):
     req = requests.get('https://sputnik.bot.assa.dev/backend/ping')
-    total, used, free = shutil.disk_usage("/")
+    total, used, free = shutil.disk_usage("/tmp/")
 
     fs_info = 'Not error'
     try:
-        with open('newfile', "wb") as f:
+        with open('/tmp/file.tmp', "wb") as f:
             f.seek(10*1024**2)
             f.write(b"\0")
     except OSError as e:
