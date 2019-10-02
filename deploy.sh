@@ -3,7 +3,7 @@
 zip -r app.zip * --exclude "*.log" --exclude "*venv*" --exclude "deploy.sh"
 
 yc serverless function version create \
-  --function-name=test \
+  --function-name=hello-world \
   --runtime python37 \
   --entrypoint main.handler \
   --memory 128m \
